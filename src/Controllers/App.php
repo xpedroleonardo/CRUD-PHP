@@ -7,8 +7,8 @@ use Src\Models\Item;
 
 class App
 {
-  /** @var Engine */
-  private $view;
+  // /** @var Engine */
+  // private $view;
 
   public function __construct($router)
   {
@@ -25,24 +25,30 @@ class App
     echo $this->view->render("home");
   }
 
-  // public function create(array $data): void
-  // {
-  //   $userData = filter_var_array($data, FILTER_SANITIZE_STRING);
-  //   if (in_array("", $userData)) {
-  //     $callback["message"] = message("Informe o nome e o sobrenome", "error");
-  //     echo json_encode($callback);
-  //     return;
-  //   }
+  public function create(): void
+  {
+    echo $this->view->render("create");
+  }
 
-  //   $user = new User();
-  //   $user->first_name = $userData["first_name"];
-  //   $user->last_name = $userData["last_name"];
-  //   $user->save();
+  public function saveCreate(array $data): void
+  {
+    $itemData = filter_var_array($data, FILTER_SANITIZE_STRING);
+    if (in_array("", $itemData)) {
+      $callback["message"] = message("Informe o todos os Dados", "error");
+      echo json_encode($callback);
+      return;
+    }
 
-  //   $callback["message"] = message("Usuário cadastrado com sucesso", "success");
-  //   $callback["user"] = $this->view->render("user", ["user" => $user]);
-  //   echo json_encode($callback);
-  // }
+    $item = new Item();
+    $item->name = $itemData["name"];
+    $item->description = $itemData["description"];
+    $item->image = $itemData["image"];
+    $item->price = $itemData["price"];
+    $item->save();
+
+    $callback["message"] = message("Usuário cadastrado com sucesso", "success");
+    echo json_encode($callback);
+  }
 
   // public function update(array $data): void
   // {

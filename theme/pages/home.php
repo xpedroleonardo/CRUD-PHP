@@ -5,11 +5,11 @@
   <div class="content">
     <div id="page-home-content">
       <div class="logo-container">
-        <img src="<?= url('/theme/assets/images/logo.svg') ?>" alt="Logo" />
+        <img src="<?= url('/theme/assets/images/logo.svg') ?>" alt="Logo" draggable="false" />
         <h2>Sua plataforma de estudos online.</h2>
       </div>
       <div>
-        <img src="<?= url('/theme/assets/images/landing.svg') ?>" alt="Plataforma de estudos" class="hero-image" />
+        <img src="<?= url('/theme/assets/images/landing.svg') ?>" alt="Plataforma de estudos" class="hero-image" draggable="false" />
       </div>
     </div>
   </div>
@@ -24,12 +24,12 @@
 
       <div class="buttons-container">
         <a href="#" class="products">
-          <img src="<?= url('/theme/assets/images/icons/study.svg') ?>" />
+          <img src="<?= url('/theme/assets/images/icons/study.svg') ?>" draggable="false" />
           Produtos
         </a>
 
-        <a href="#" class="products">
-          <img src="<?= url('/theme/assets/images/icons/study.svg') ?>" />
+        <a href="<?= $router->route("app.create") ?>" class="products">
+          <img src="<?= url('/theme/assets/images/icons/study.svg') ?>" draggable="false" />
           Cadastar
         </a>
       </div>

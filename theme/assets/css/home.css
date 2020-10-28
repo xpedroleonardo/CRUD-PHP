@@ -276,7 +276,7 @@
 }
 
 
-@media(max-width: 770px){
+@media(max-width: 700px){
   
   #page-home-content {
     flex-direction: column;

@@ -9,14 +9,17 @@ $router->namespace("Src\Controllers");
 
 $router->group(null);
 
-$router->get("/", "App:home", "app.home");
-$router->post("/create", "", "");
+// $router->get("/", "App:home", "app.home");
+
+$router->get("/", "App:create", "app.create");
+$router->post("/saveCreate", "App:saveCreate", "app.saveCreate");
+
 $router->get("/{id}/update", "", "");
 $router->get("/save", "", "");
 $router->post("/delete", "", "");
 
 $router->dispatch();
 
-if ($router->error()) {
-  var_dump($router->error());
-}
+// if ($router->error()) {
+//   var_dump($router->error());
+// }

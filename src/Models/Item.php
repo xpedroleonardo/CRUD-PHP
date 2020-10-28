@@ -15,6 +15,6 @@ class Item extends DataLayer
    */
   public function __construct()
   {
-    parent::__construct("users", ["name"]);
+    parent::__construct("items", ["name", "description", "image", "price"]);
   }
 }
