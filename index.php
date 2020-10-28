@@ -9,9 +9,8 @@ $router->namespace("Src\Controllers");
 
 $router->group(null);
 
-// $router->get("/", "App:home", "app.home");
-
-$router->get("/", "App:create", "app.create");
+$router->get("/", "App:home", "app.home");
+$router->get("/create", "App:create", "app.create");
 $router->post("/saveCreate", "App:saveCreate", "app.saveCreate");
 
 $router->get("/{id}/update", "", "");

@@ -22,7 +22,9 @@ class App
 
   public function home(): void
   {
-    echo $this->view->render("home");
+    echo $this->view->render("home", [
+      "items" => (new Item())->find()->fetch(true)
+    ]);
   }
 
   public function create(): void
@@ -34,7 +36,7 @@ class App
   {
     $itemData = filter_var_array($data, FILTER_SANITIZE_STRING);
     if (in_array("", $itemData)) {
-      $callback["message"] = message("Informe o todos os Dados", "error");
+      $callback["error"] = message("Informe o todos os Dados", "error");
       echo json_encode($callback);
       return;
     }
@@ -42,7 +44,7 @@ class App
     $item = new Item();
     $item->name = $itemData["name"];
     $item->description = $itemData["description"];
-    $item->image = $itemData["image"];
+    $item->image = $itemData["selectImage"];
     $item->price = $itemData["price"];
     $item->save();
 

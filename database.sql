@@ -13,4 +13,4 @@ CREATE TABLE IF NOT EXISTS `items` (
 );
 
 -- INSERT INTO `Item` (`name`) VALUES ('Pedro Leonardo');
--- SELECT * FROM `Item`;
+-- SELECT * FROM `items`;

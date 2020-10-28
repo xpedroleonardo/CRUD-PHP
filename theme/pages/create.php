@@ -31,7 +31,7 @@
 
         <div class="select-block">
           <label for="images">Imagem</label>
-          <select required value="" name="image" id="images" onchange="previewImage(this)">
+          <select required name="selectImage" type="text" id="images" onchange="previewImage(this)">
             <option selected disabled hidden>Selecione uma Imagem</option>
             <optgroup label="Feminino">
               <option value="cropped.jpg">Cropped</option>
@@ -58,7 +58,7 @@
 
         <div class="input-block">
           <label for="price">Preço</label>
-          <input id="price" placeholder="0,00" />
+          <input id="price" name="price" type="number" placeholder="0,00" />
         </div>
 
       </fieldset>
@@ -162,11 +162,13 @@ $v->start("js");
       dataType: "json",
       success: function(callback) {
 
-        if (callback.error) {
-          alert("Erro")
-        } else {
+        console.log(callback);
 
-        }
+        // if (callback.error) {
+        //   console.log("N deu");
+        // } else {
+        //   console.log("deu");
+        // }
       },
       error: function() {
 
