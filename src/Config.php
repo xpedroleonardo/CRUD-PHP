@@ -30,13 +30,3 @@ function url(string $path): string
   }
   return ROOT;
 }
-
-/**
- * @param string $message
- * @param string $type
- * @return string
- */
-function message(string $message, string $type): string
-{
-  return "<div class=\"message {$type}\">{$message}</div>";
-}

@@ -4,7 +4,7 @@
 
   <header class="page-header">
     <div class="top-bar-container">
-      <a href="#">
+      <a href="<?= $router->route("app.home") ?>">
         <img src="<?= url("/theme/assets/images/icons/back.svg") ?>" alt="Voltar" />
       </a>
       <img src="<?= url("/theme/assets/images/logo.svg") ?>" alt="Proffy" />
@@ -26,7 +26,7 @@
 
 
         <div class="image-preview">
-          <img src="<?= url("/theme/assets/images/logo.svg") ?>" id="imagePreview">
+          <img src="<?= url("/theme/assets/images/roupas/default.jpg") ?>" id="imagePreview">
         </div>
 
         <div class="select-block">
@@ -115,42 +115,6 @@ $v->start("js");
   //   $(".card-price").html(data)
   // })
 
-  async function Submit(e) {
-    e.preventDefault();
-    // var form = $(this);
-
-    // $.ajax({
-    //   url: form.attr("action"),
-    //   data: form.serialize(),
-    //   type: "POST",
-    //   dataType: "json",
-    //   success: function(callback) {
-    //     if (callback.error) {
-    //       swal({
-    //         title: callback.message,
-    //         icon: "warning",
-    //         buttons: [false, "Ok"],
-    //       })
-    //     } else {
-    //       swal({
-    //           title: callback.message,
-    //           icon: "success",
-    //           buttons: [false, "Ok"],
-    //         })
-    //         .then(areClosed => {
-    //           if (areClosed) location.href = ''
-    //         });
-    //     }
-    //   },
-    //   error: function() {
-    //     swal({
-    //       title: "Erro na exclusão do produto!",
-    //       icon: "error",
-    //     });
-    //   }
-    // });
-  }
-
   $("form").submit(function(e) {
     e.preventDefault();
     var form = $(this);
@@ -162,13 +126,25 @@ $v->start("js");
       dataType: "json",
       success: function(callback) {
 
-        console.log(callback);
+        if (callback.error) {
 
-        // if (callback.error) {
-        //   console.log("N deu");
-        // } else {
-        //   console.log("deu");
-        // }
+          Swal.fire({
+            icon: callback.type,
+            title: 'Oops...',
+            text: callback.error,
+            allowOutsideClick: false
+          })
+
+        } else {
+          Swal.fire({
+            icon: callback.type,
+            title: 'Sucesso',
+            text: callback.message,
+            allowOutsideClick: false,
+            willClose: () => location.href = '<?= $router->route("app.home") ?>'
+          })
+
+        }
       },
       error: function() {
 

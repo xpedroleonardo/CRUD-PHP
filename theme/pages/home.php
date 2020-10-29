@@ -1,5 +1,4 @@
 <?php $v->layout("../_theme", ["title" => "Home"]); ?>
-<!-- --------------------- -->
 
 <div id="home-page">
   <div class="content">
@@ -23,7 +22,7 @@
 
 
       <div class="buttons-container">
-        <a href="#" class="products">
+        <a href="<?= $router->route("app.read") ?>" class="products">
           <img src="<?= url('/theme/assets/images/icons/study.svg') ?>" draggable="false" />
           Produtos
         </a>

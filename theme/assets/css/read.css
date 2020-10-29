@@ -1,0 +1,196 @@
+#page-teacher-list{
+  width: 100vw;
+  height: 100vh;
+}
+
+#search-teachers{
+  margin-top: 3.2rem;
+}
+
+#search-teachers label{
+  color: var(--color-title-in-primary);
+}
+
+#search-teachers button{
+  width: 100%;
+  height: 5.6rem;
+  background: var(--color-secundary);
+  color: var(--color-button-text);
+  border: 0;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font: 700 1.6rem Archivo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  margin-top: 3.2rem;
+}
+
+#search-teachers button:hover{
+  background: var(--color-secundary-dark);
+}
+
+#page-teacher-list main{
+  margin: 3.2rem auto;
+  width: 100%;
+}
+
+
+.row{
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media(min-width: 700px){
+
+  #page-teacher-list{
+      max-width: 100%;
+  }
+
+  #search-teachers{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      column-gap: 16px;
+      position: absolute;
+      bottom: -28px;
+  }
+
+  #search-teachers .input-block + .input-block,
+  #search-teachers .select-block + .select-block {
+      margin-top: 0;
+  }
+
+  #page-teacher-list main{
+      padding: 3.2rem 0;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+
+}
+
+@media(max-width: 770px){
+  #page-teacher-list main{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .teacher-item{
+    margin-bottom: 20px;
+  }
+}
+
+.teacher-item{
+  background: var(--color-box-base);
+  border: 1px solid var(--color-line-in-white);
+  border-radius: 0.8rem;
+  overflow: hidden;
+  width: 35rem;
+  max-width: 35rem !important;
+  margin-bottom: 20px;
+}
+
+.teacher-item header{
+  padding: 3.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.teacher-item header img{
+  width: 20rem;
+  height: 20rem;
+
+  margin-bottom: 15px;
+}
+
+.teacher-item header div{
+  margin-left: 2.4rem;
+}
+
+.teacher-item header div strong{
+  font: 700 2.4rem Archivo;
+  display: block;
+  color: var(--color-text-title);
+}
+
+.teacher-item header div span{
+  font-size: 1.6rem;
+  display: block;
+  margin-top: 0.4rem;
+}
+
+.teacher-item > p{
+  padding: 0 2rem;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  width: 300px;
+}
+
+.teacher-item footer{
+  padding: 3.2rem 2rem;
+  background: var(--color-box-footer);
+  border-top: 1px solid var(--color-line-in-white);
+  margin-top: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.teacher-item footer p strong{
+  color: var(--color-primary);
+  font-size: 1.6rem;
+  display: block;  
+}
+
+.teacher-item footer a{
+  width: 20rem;
+  height: 5.6rem;
+  background: var(--color-secundary);
+  color: var(--color-button-text);
+  border: 0;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font: 700 1.4rem Archivo;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: 0.2s;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+.teacher-item footer a:hover{
+  background: var(--color-secundary-dark);
+}
+
+@media(min-width: 700px){
+  .teacher-item header,
+  .teacher-item footer {
+      padding: 3.2rem;
+  }
+
+  .teacher-item > p{
+      padding: 0 3.2rem;
+  }
+
+  .teacher-item footer p strong{
+      display: initial;
+      margin-left: 1.6rem;
+  }
+
+  .teacher-item footer button{
+      width: 24.5rem;
+      font-size: 1.6rem;
+      justify-content: center;
+  }
+
+  .teacher-item footer button img{
+      margin-right: 1.6rem;
+  }
+}

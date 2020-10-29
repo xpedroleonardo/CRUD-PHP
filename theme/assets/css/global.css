@@ -63,3 +63,20 @@ textarea{
       font-size: 62.5%;
   }
 }
+
+.swal2-popup,.swal2-modal {
+  width: 40em !important;
+  font-size: 1.5rem !important;
+}
+
+.swal2-title {
+  font-size: 2em !important;
+}
+
+.swal2-content {
+  font-size: 1.5em !important;
+}
+
+.swal2-styled {
+  width: 15em !important;
+}

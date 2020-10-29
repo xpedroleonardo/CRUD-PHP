@@ -22,21 +22,28 @@ class App
 
   public function home(): void
   {
-    echo $this->view->render("home", [
-      "items" => (new Item())->find()->fetch(true)
-    ]);
+    echo $this->view->render("home");
   }
 
   public function create(): void
   {
-    echo $this->view->render("create");
+    echo $this->view->render("create", [
+      "headerTitle" => "Que incrível que você quer dar aula",
+      "headerP" => "O primeiro passo é preencher esse formulário de inscrição"
+    ]);
+  }
+
+  public function read(): void
+  {
+    echo $this->view->render("read");
   }
 
   public function saveCreate(array $data): void
   {
     $itemData = filter_var_array($data, FILTER_SANITIZE_STRING);
     if (in_array("", $itemData)) {
-      $callback["error"] = message("Informe o todos os Dados", "error");
+      $callback["error"] = "Informe o todos os Dados";
+      $callback["type"] = "error";
       echo json_encode($callback);
       return;
     }
@@ -48,7 +55,8 @@ class App
     $item->price = $itemData["price"];
     $item->save();
 
-    $callback["message"] = message("Usuário cadastrado com sucesso", "success");
+    $callback["message"] = "Usuário cadastrado";
+    $callback["type"] = "success";
     echo json_encode($callback);
   }
 
