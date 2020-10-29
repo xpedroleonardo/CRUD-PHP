@@ -28,14 +28,34 @@ class App
   public function create(): void
   {
     echo $this->view->render("create", [
+      "title" => "Novo",
       "headerTitle" => "Que incrível que você quer dar aula",
-      "headerP" => "O primeiro passo é preencher esse formulário de inscrição"
+      "headerDesc" => "O primeiro passo é preencher esse formulário de inscrição"
     ]);
   }
 
   public function read(): void
   {
-    echo $this->view->render("read");
+    echo $this->view->render("read", [
+      "items" => (new Item())->find()->fetch(true),
+      "title" => "Itens",
+      "headerTitle" => "Estes são os proffys disponíveis."
+    ]);
+  }
+
+  public function detail(array $data): void
+  {
+    $item = (new Item())->findById($data["id"]);
+
+    if ($item) {
+      echo $this->view->render("detail", [
+        "item" => $item,
+        "title" => "Detalhe",
+        "headerTitle" => "Detalhe do Item"
+      ]);
+    } else {
+      echo $this->view->render("home");
+    }
   }
 
   public function saveCreate(array $data): void

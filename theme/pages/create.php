@@ -1,19 +1,13 @@
-<?php $v->layout("../_theme", ["title" => "Novo"]); ?>
+<?php $v->layout("../_theme"); ?>
 
 <div id="page-teacher-form" class="container">
 
-  <header class="page-header">
-    <div class="top-bar-container">
-      <a href="<?= $router->route("app.home") ?>">
-        <img src="<?= url("/theme/assets/images/icons/back.svg") ?>" alt="Voltar" />
-      </a>
-      <img src="<?= url("/theme/assets/images/logo.svg") ?>" alt="Proffy" />
-    </div>
-    <div class="header-content">
-      <strong>Que incrível que você quer dar aula</strong>
-      <p>O primeiro passo é preencher esse formulário de inscrição</p>
-    </div>
-  </header>
+  <?php
+  $v->insert("../utils/header", [
+    "headerTitle" => $headerTitle,
+    "headerDesc" => $headerDesc,
+  ]);
+  ?>
 
 
   <main>
@@ -26,7 +20,7 @@
 
 
         <div class="image-preview">
-          <img src="<?= url("/theme/assets/images/roupas/default.jpg") ?>" id="imagePreview">
+          <img src="<?= url("/theme/assets/images/roupas/default.jpg") ?>" title="Preview da Imagem" id="imagePreview" draggable="false" />
         </div>
 
         <div class="select-block">
@@ -63,21 +57,10 @@
 
       </fieldset>
 
-      <!-- <fieldset>
-
-        <legend>
-          Tamanhos disponíveis
-          <button type="button" onClick={addNewScheduleItem}>
-            + Novo horário
-          </button>
-        </legend>
-
-      </fieldset> -->
-
       <footer>
 
         <p>
-          <img src="<?= url("/theme/assets/images/icons/warning.svg") ?>" alt="Aviso importante" />
+          <img src="<?= url("/theme/assets/images/icons/warning.svg") ?>" alt="Aviso importante" draggable="false" />
           Importante!<br />
           Preencha todos os dados.
         </p>

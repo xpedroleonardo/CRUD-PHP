@@ -6,7 +6,15 @@
     <img src="<?= url("/theme/assets/images/logo.svg") ?>" alt="Proffy" />
   </div>
   <div class="header-content">
-    <strong>Que incrível que você quer dar aula</strong>
-    <p>O primeiro passo é preencher esse formulário de inscrição</p>
+    <strong><?= $headerTitle ?></strong>
+
+    <?php
+
+    if (!empty($headerDesc)) {
+      echo "<p>" . $headerDesc . "</p>";
+    }
+
+    ?>
+
   </div>
 </header>

@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="<?= url("/theme/assets/css/home.css"); ?>" />
   <link rel="stylesheet" href="<?= url("/theme/assets/css/create.css") ?>" />
   <link rel="stylesheet" href="<?= url("/theme/assets/css/read.css") ?>" />
+  <link rel="stylesheet" href="<?= url("/theme/assets/css/detail.css") ?>" />
 </head>
 
 <body>

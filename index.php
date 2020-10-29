@@ -15,7 +15,7 @@ $router->post("/saveCreate", "App:saveCreate", "app.saveCreate");
 
 $router->get("/products", "App:read", "app.read");
 
-$router->get("/{id}/update", "", "");
+$router->get("/{id}/detail", "App:detail", "app.detail");
 $router->get("/save", "", "");
 $router->post("/delete", "", "");
 
