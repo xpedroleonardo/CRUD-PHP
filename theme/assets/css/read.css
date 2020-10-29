@@ -1,7 +1,9 @@
 #list{
   width: 100%;
+  max-width: 100%;
   height: 100vh;
 }
+
 
 #search-teachers{
   margin-top: 3.2rem;
@@ -34,13 +36,14 @@
 
 #list main{
   margin: 3.2rem auto;
+  padding: 3.2rem 0;
+  
   width: 100%;
+  max-width: 1200px;
 }
-
 
 .row{
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   justify-content: space-around;
 }
@@ -166,35 +169,6 @@
 
   .teacher-item{
     margin-bottom: 20px;
-  }
-
-}
-
-
-
-@media(min-width: 700px){
-
-  #list{
-      max-width: 100%;
-  }
-
-  #search-teachers{
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      column-gap: 16px;
-      position: absolute;
-      bottom: -28px;
-  }
-
-  #search-teachers .input-block + .input-block,
-  #search-teachers .select-block + .select-block {
-      margin-top: 0;
-  }
-
-  #list main{
-      padding: 3.2rem 0;
-      max-width: 1200px;
-      margin: 0 auto;
   }
 
 }

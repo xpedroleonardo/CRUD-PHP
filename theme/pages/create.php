@@ -40,7 +40,7 @@
           </select>
         </div>
 
-        <div class="input-block">
+        <div class="block">
           <label for="name">Nome</label>
           <input type="text" name="name" id="name" />
         </div>
@@ -50,7 +50,7 @@
           <textarea id="bio" name="description"></textarea>
         </div>
 
-        <div class="input-block">
+        <div class="block">
           <label for="price">Preço</label>
           <input id="price" name="price" type="text" placeholder="000.000,00" />
         </div>

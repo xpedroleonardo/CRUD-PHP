@@ -22,7 +22,9 @@ class App
 
   public function home(): void
   {
-    echo $this->view->render("home");
+    echo $this->view->render("home", [
+      "items" => (new Item())->find()->count()
+    ]);
   }
 
   public function create(): void
@@ -77,7 +79,7 @@ class App
   {
     $itemData = filter_var_array($data, FILTER_SANITIZE_STRING);
     if (in_array("", $itemData)) {
-      $callback["error"] = "Informe o todos os Dados";
+      $callback["error"] = "Preencha todos os dados.";
       $callback["type"] = "error";
       echo json_encode($callback);
       return;
@@ -90,7 +92,7 @@ class App
     $item->price = $itemData["price"];
     $item->save();
 
-    $callback["message"] = "Usuário cadastrado";
+    $callback["message"] = "Usuário cadastrado com sucesso";
     $callback["type"] = "success";
     echo json_encode($callback);
   }
@@ -100,7 +102,7 @@ class App
 
     $itemData = filter_var_array($data, FILTER_SANITIZE_STRING);
     if (in_array("", $itemData)) {
-      $callback["error"] = "Informe o nome e o sobrenome";
+      $callback["error"] = "Preencha todos os dados.";
       $callback["type"] = "error";
       echo json_encode($callback);
       return;
@@ -117,44 +119,6 @@ class App
     $callback["type"] = "success";
     echo json_encode($callback);
   }
-
-  // public function update(array $data): void
-  // {
-  //   $userData = filter_var_array($data, FILTER_SANITIZE_STRING);
-  //   if (in_array("", $userData)) {
-  //     $callback["message"] = message("Informe o nome e o sobrenome", "error");
-  //     $callback["error"] = true;
-  //     echo json_encode($callback);
-  //     return;
-  //   }
-
-  //   $user = (new User())->findById($userData["id"]);
-  //   $user->first_name = $userData["first_name"];
-  //   $user->last_name = $userData["last_name"];
-  //   $user->save();
-
-  //   $callback["message"] = message("Usuário Editado com sucesso", "success");
-  //   $callback["update"] = true;
-  //   echo json_encode($callback);
-  // }
-
-
-  // public function updateForm(array $data): void
-  // {
-  //   $user = (new User())->findById($data["id"]);
-
-  //   if ($user) {
-  //     echo $this->view->render("edit", [
-  //       "title" => "Editar Usuário",
-  //       "user" => $user
-  //     ]);
-  //   } else {
-  //     echo $this->view->render("error", [
-  //       "error" => "Produto não encontrado"
-  //     ]);
-  //   }
-  // }
-
 
   public function delete(array $data): void
   {

@@ -23,20 +23,26 @@
 
       <div class="buttons-container">
         <a href="<?= $router->route("app.read") ?>" class="products">
-          <img src="<?= url('/theme/assets/images/icons/study.svg') ?>" draggable="false" />
+          <img src="<?= url('/theme/assets/images/icons/list.svg') ?>" draggable="false" />
           Produtos
         </a>
 
         <a href="<?= $router->route("app.create") ?>" class="products">
-          <img src="<?= url('/theme/assets/images/icons/study.svg') ?>" draggable="false" />
+          <img src="<?= url('/theme/assets/images/icons/plus.svg') ?>" draggable="false" />
           Cadastar
         </a>
       </div>
     </div>
 
     <span class="total-products">
-      Total de 10 produtos cadastrados
-      <img src="<?= url('/theme/assets/images/icons/purple-heart.svg') ?>" alt="" />
+      <?php
+      if ($items > 0) {
+        echo "Total de" . $items . " produtos cadastrados";
+        echo "<img src=" . url('/theme/assets/images/icons/purple-heart.svg') . " draggable='false' />";
+      } else {
+        echo "Ainda não temos produtos cadastrados";
+      }
+      ?>
     </span>
 
   </div>

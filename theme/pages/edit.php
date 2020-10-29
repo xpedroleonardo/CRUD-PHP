@@ -41,7 +41,7 @@
           </select>
         </div>
 
-        <div class="input-block">
+        <div class="block">
           <label for="name">Nome</label>
           <input type="text" name="name" id="name" value="<?= $item->name ?>" />
         </div>
@@ -51,7 +51,7 @@
           <textarea id="bio" name="description"><?= $item->description ?></textarea>
         </div>
 
-        <div class="input-block">
+        <div class="block">
           <label for="price">Preço</label>
           <input id="price" name="price" type="text" value="<?= $item->price ?>" placeholder="00,000,00" />
         </div>
