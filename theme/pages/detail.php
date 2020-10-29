@@ -35,7 +35,7 @@
         Editar
       </button>
 
-      <button id="delete" type="submit">
+      <button id="delete" type="submit" data-action="<?= $router->route("app.delete"); ?>" data-id="<?= $item->id; ?>">
         Excluir
       </button>
 
@@ -43,3 +43,54 @@
 
   </main>
 </div>
+
+<?php $v->start("js"); ?>
+
+<script>
+  $(() => {
+    $("body").on("click", "[data-action]", function(e) {
+      e.preventDefault();
+      var data = $(this).data();
+
+      Swal.fire({
+        icon: "warning",
+        title: "Excluir produto!",
+        text: "Deseja realmente excluir o produto",
+        confirmButtonText: 'Excluir',
+        showCancelButton: true,
+        showLoaderOnConfirm: true,
+        preConfirm: () => {
+          $.ajax({
+            url: data.action,
+            data: data,
+            type: "POST",
+            dataType: "json",
+            success: function(callback) {
+
+              console.log(callback);
+
+              if (callback.message) {
+
+                Swal.fire({
+                  icon: callback.type,
+                  title: "Sucesso",
+                  text: callback.message,
+                  allowOutsideClick: false,
+                  willClose: () => location.href = '<?= $router->route("app.products") ?>'
+                })
+              }
+            },
+            error: function() {
+              Swal.fire({
+                title: "Erro na exclusão do produto!",
+                icon: "error",
+              });
+            }
+          });
+        }
+      })
+    });
+  });
+</script>
+
+<?php $v->end(); ?>

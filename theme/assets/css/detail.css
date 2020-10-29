@@ -42,11 +42,11 @@
 }
 
 #delete {
-  background-color: red !important;
+  background-color: #E33D3D !important;
 }
-
-#update {
-  background-color: blue !important;
+#delete:hover {
+  background-color: #ad2f2f !important;
+  transition: all 0.2s ease-in;
 }
 
 

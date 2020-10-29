@@ -118,20 +118,21 @@ class App
   // }
 
 
-  // public function delete(array $data): void
-  // {
-  //   if (empty($data["id"])) {
-  //     return;
-  //   }
+  public function delete(array $data): void
+  {
+    if (empty($data["id"])) {
+      return;
+    }
 
-  //   $id = filter_var($data["id"], FILTER_VALIDATE_INT);
-  //   $user = (new User())->findById($id);
+    $id = filter_var($data["id"], FILTER_VALIDATE_INT);
+    $item = (new Item())->findById($id);
 
-  //   if ($user) {
-  //     $user->destroy();
-  //   }
+    if ($item) {
+      $item->destroy();
+    }
 
-  //   $callback["remove"] = true;
-  //   echo json_encode($callback);
-  // }
+    $callback["type"] = "success";
+    $callback["message"] = "Item excluído com sucesso";
+    echo json_encode($callback);
+  }
 }
