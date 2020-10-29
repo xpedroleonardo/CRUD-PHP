@@ -41,6 +41,10 @@
   max-width: 40vw;
 }
 
+a {
+  text-decoration: none;
+}
+
 #delete {
   background-color: #E33D3D !important;
 }

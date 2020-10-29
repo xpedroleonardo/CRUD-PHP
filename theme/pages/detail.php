@@ -31,9 +31,11 @@
 
     <footer>
 
-      <button id="update" type="submit">
-        Editar
-      </button>
+      <a href=" <?= $router->route("app.edit", ["id" => $item->id]); ?>">
+        <button id=" update">
+          Editar
+        </button>
+      </a>
 
       <button id="delete" type="submit" data-action="<?= $router->route("app.delete"); ?>" data-id="<?= $item->id; ?>">
         Excluir
@@ -67,8 +69,6 @@
             dataType: "json",
             success: function(callback) {
 
-              console.log(callback);
-
               if (callback.message) {
 
                 Swal.fire({
@@ -76,7 +76,7 @@
                   title: "Sucesso",
                   text: callback.message,
                   allowOutsideClick: false,
-                  willClose: () => location.href = '<?= $router->route("app.products") ?>'
+                  willClose: () => location.href = "<?= url("/products") ?>"
                 })
               }
             },

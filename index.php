@@ -13,10 +13,11 @@ $router->get("/", "App:home", "app.home");
 $router->get("/create", "App:create", "app.create");
 $router->get("/products", "App:read", "app.read");
 $router->get("/{id}/detail", "App:detail", "app.detail");
-$router->get("/{id}/update", "App:update", "app.update");
+$router->get("/{id}/edit", "App:edit", "app.edit");
+$router->get("/erro", "App:erro", "app.erro");
 
 $router->post("/saveCreate", "App:saveCreate", "app.saveCreate");
-$router->post("/saveUpdate", "App:saveUpdate", "app.saveUpdate");
+$router->post("/saveEdit", "App:saveEdit", "app.saveEdit");
 $router->post("/delete", "App:delete", "app.delete");
 
 $router->dispatch();

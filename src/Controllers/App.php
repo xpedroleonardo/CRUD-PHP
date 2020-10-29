@@ -58,6 +58,21 @@ class App
     }
   }
 
+  public function edit(array $data): void
+  {
+    $item = (new Item())->findById($data["id"]);
+
+    if ($item) {
+      echo $this->view->render("edit", [
+        "item" => $item,
+        "title" => "Editar",
+        "headerTitle" => "Editar Item"
+      ]);
+    } else {
+      echo $this->view->render("home");
+    }
+  }
+
   public function saveCreate(array $data): void
   {
     $itemData = filter_var_array($data, FILTER_SANITIZE_STRING);
@@ -76,6 +91,29 @@ class App
     $item->save();
 
     $callback["message"] = "Usuário cadastrado";
+    $callback["type"] = "success";
+    echo json_encode($callback);
+  }
+
+  public function saveEdit(array $data): void
+  {
+
+    $itemData = filter_var_array($data, FILTER_SANITIZE_STRING);
+    if (in_array("", $itemData)) {
+      $callback["error"] = "Informe o nome e o sobrenome";
+      $callback["type"] = "error";
+      echo json_encode($callback);
+      return;
+    }
+
+    $item = (new Item())->findById($itemData["id"]);
+    $item->name = $itemData["name"];
+    $item->description = $itemData["description"];
+    $item->image = $itemData["selectImage"];
+    $item->price = $itemData["price"];
+    $item->save();
+
+    $callback["message"] = "Usuário Editado com sucesso";
     $callback["type"] = "success";
     echo json_encode($callback);
   }

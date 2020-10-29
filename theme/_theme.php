@@ -19,6 +19,7 @@
 
   <script src="<?= url("/theme/assets/js/jquery.js"); ?>"></script>
   <script src="<?= url("/theme/assets/js/scripts.js"); ?>"></script>
+  <script src="<?= url("/theme/assets/js/jquery.mask.min.js"); ?>"></script>
   <?= $v->section("js"); ?>
 </body>
 

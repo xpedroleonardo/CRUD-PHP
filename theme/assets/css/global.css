@@ -80,3 +80,9 @@ textarea{
 .swal2-styled {
   width: 15em !important;
 }
+
+.icons-actions {
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+}

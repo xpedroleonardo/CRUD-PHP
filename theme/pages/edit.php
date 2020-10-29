@@ -5,14 +5,15 @@
   <?php
   $v->insert("../utils/header", [
     "headerTitle" => $headerTitle,
-    "headerDesc" => $headerDesc,
   ]);
   ?>
 
 
   <main>
 
-    <form action="<?= $router->route("app.saveCreate") ?>" autocomplete="off">
+    <form action="<?= $router->route("app.saveEdit") ?>" autocomplete="off">
+
+      <input type="hidden" name="id" value="<?= $item->id ?>">
 
       <fieldset>
 
@@ -20,7 +21,7 @@
 
 
         <div class="image-preview">
-          <img src="<?= url("/theme/assets/images/roupas/default.jpg") ?>" title="Preview da Imagem" id="imagePreview" draggable="false" />
+          <img src="<?= url("/theme/assets/images/roupas/" . $item->image) ?>" title="Preview da Imagem" id="imagePreview" draggable="false" />
         </div>
 
         <div class="select-block">
@@ -28,31 +29,31 @@
           <select required name="selectImage" type="text" id="images" onchange="previewImage(this)">
             <option selected disabled hidden>Selecione uma Imagem</option>
             <optgroup label="Feminino">
-              <option value="cropped.jpg">Cropped</option>
-              <option value="short.jpg">Short</option>
-              <option value="vestido.jpg">Vestido</option>
+              <option <?= ($item->image === "cropped.jpg") ? 'selected' : '' ?> value="cropped.jpg">Cropped</option>
+              <option <?= ($item->image === "short.jpg") ? 'selected' : '' ?> value="short.jpg">Short</option>
+              <option <?= ($item->image === "vestido.jpg") ? 'selected' : '' ?> value="vestido.jpg">Vestido</option>
             </optgroup>
             <optgroup label="Masculino">
-              <option value="blusa.jpg">Blusa</option>
-              <option value="calça.jpg">Calça</option>
-              <option value="jaqueta.jpg">Jaqueta</option>
+              <option <?= ($item->image === "blusa.jpg") ? 'selected' : '' ?> value="blusa.jpg">Blusa</option>
+              <option <?= ($item->image === "calça.jpg") ? 'selected' : '' ?> value="calça.jpg">Calça</option>
+              <option <?= ($item->image === "jaqueta.jpg") ? 'selected' : '' ?> value="jaqueta.jpg">Jaqueta</option>
             </optgroup>
           </select>
         </div>
 
         <div class="input-block">
           <label for="name">Nome</label>
-          <input type="text" name="name" id="name" />
+          <input type="text" name="name" id="name" value="<?= $item->name ?>" />
         </div>
 
         <div class="textarea-block">
           <label for="bio">Descrição</label>
-          <textarea id="bio" name="description"></textarea>
+          <textarea id="bio" name="description"><?= $item->description ?></textarea>
         </div>
 
         <div class="input-block">
           <label for="price">Preço</label>
-          <input id="price" name="price" type="text" placeholder="000.000,00" />
+          <input id="price" name="price" type="text" value="<?= $item->price ?>" placeholder="00,000,00" />
         </div>
 
       </fieldset>
@@ -65,7 +66,7 @@
           Preencha todos os dados.
         </p>
         <button type="submit">
-          Salvar cadastro
+          Salvar edição
         </button>
 
       </footer>
@@ -88,7 +89,9 @@ $v->start("js");
     if (select.value) {
       let image = document.querySelector("#imagePreview")
 
-      image.setAttribute("src", `theme/assets/images/roupas/${select.value}`)
+      let local = `<?= url("/theme/assets/images/roupas") ?>/${select.value}`
+
+      image.setAttribute("src", `${local}`)
     }
   }
 
