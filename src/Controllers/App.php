@@ -13,7 +13,7 @@ class App
   public function __construct($router)
   {
     $this->view = Engine::create(
-      dirname(__DIR__, 2) . "/theme/pages",
+      dirname(__DIR__, 2) . "/theme/views",
       "php"
     );
 

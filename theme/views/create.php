@@ -52,7 +52,7 @@
 
         <div class="block">
           <label for="price">Preço</label>
-          <input id="price" name="price" type="text" placeholder="000.000,00" />
+          <input id="price" name="price" type="text" placeholder="00.000,00" />
         </div>
 
       </fieldset>

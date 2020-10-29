@@ -37,7 +37,11 @@
     <span class="total-products">
       <?php
       if ($items > 0) {
-        echo "Total de" . $items . " produtos cadastrados";
+        if ($items == 1) {
+          echo "Total de " . $items . " produto cadastrado";
+        } else {
+          echo "Total de " . $items . " produtos cadastrados";
+        }
         echo "<img src=" . url('/theme/assets/images/icons/purple-heart.svg') . " draggable='false' />";
       } else {
         echo "Ainda não temos produtos cadastrados";
