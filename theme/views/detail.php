@@ -1,6 +1,6 @@
 <?php $v->layout("../_theme"); ?>
 
-<div id="page-teacher-form" class="container">
+<div id="page-form" class="container">
 
   <?php
   $v->insert("../utils/header", [
@@ -32,7 +32,7 @@
 
         <div class="block">
           <div id="details-card-price" class="text-center">
-            <p>Preço<strong>R$ <?= $item->price ?></strong></p>
+            <p><strong>R$ <?= $item->price ?></strong></p>
           </div>
         </div>
 
@@ -70,9 +70,8 @@
 
       Swal.fire({
         icon: "warning",
-        // iconColor: "#fafa",
-        title: "Excluir produto!",
-        text: "Deseja realmente excluir o produto",
+        title: "Excluir produto",
+        text: "Deseja realmente excluir o produto ?",
         confirmButtonText: 'Excluir',
         cancelButtonText: 'Cancelar',
         showCancelButton: true,

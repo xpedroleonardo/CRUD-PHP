@@ -33,7 +33,6 @@
 .block #details-card-price strong{
   color: var(--color-primary);
   font-size: 1.6rem;
-  margin-left: 10px;
 }
 
 a {
@@ -52,6 +51,7 @@ a {
 
 #delete {
   background-color: #E33D3D !important;
+  margin-top: 3.2rem;
 }
 #delete:hover {
   background-color: #ad2f2f !important;

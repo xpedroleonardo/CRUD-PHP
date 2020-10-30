@@ -23,6 +23,7 @@ class App
   public function home(): void
   {
     echo $this->view->render("home", [
+      "title" => "Home",
       "items" => (new Item())->find()->count()
     ]);
   }
@@ -52,8 +53,8 @@ class App
     if ($item) {
       echo $this->view->render("detail", [
         "item" => $item,
-        "title" => "Detalhe",
-        "headerTitle" => "Detalhe do Item"
+        "title" => "Detalhes",
+        "headerTitle" => "Detalhes do Item"
       ]);
     } else {
       echo $this->view->render("home");

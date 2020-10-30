@@ -1,6 +1,6 @@
 <?php $v->layout("../_theme"); ?>
 
-<div id="list" class="pages container">
+<div id="list" class="container">
 
   <?php
   $v->insert("../utils/header", [
@@ -26,7 +26,10 @@
             </div>
           </header>
 
-          <p>Ainda não temos produtos cadastrados</p>
+          <div class="text-center">
+            <p>Ainda não temos produtos cadastrados</p>
+          </div>
+          <br />
 
           <footer>
 

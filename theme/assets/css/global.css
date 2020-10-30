@@ -21,7 +21,7 @@
   --color-box-base: #FFFFFF;
   --color-box-footer: #FAFAFC;
 
-  --background: #F0F0F7;
+  --background: #f7f4f0;
   --text: #FFF;
 
 }
@@ -39,13 +39,6 @@ html, body, #root{
 body{
   background: var(--background);
 }
-
-#root{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 
 body,
 input,
@@ -116,11 +109,11 @@ textarea{
 
 @media (max-width: 770px){
 
-  #page-teacher-form .image-preview {
+  #page-form .image-preview {
     margin-top: 20px;
     margin-bottom: 40px;
   }
-  #page-teacher-form .image-preview img {
+  #page-form .image-preview img {
     max-width: 250px;
     width: 250px;
   }
@@ -146,12 +139,10 @@ textarea{
 
   margin: 0 auto;
   padding: 1.6rem 0;
-
-  color: var(--color-text-in-primary);
 }
 
 .page-header .top-bar-container a{
-  height: 3.2rem;
+  height: 24px;
   transition: opacity 0.2s;
 }
 

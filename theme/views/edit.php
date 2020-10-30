@@ -1,6 +1,6 @@
 <?php $v->layout("../_theme"); ?>
 
-<div id="page-teacher-form" class="container">
+<div id="page-form" class="container">
 
   <?php
   $v->insert("../utils/header", [
@@ -29,14 +29,17 @@
           <select required name="selectImage" type="text" id="images" onchange="previewImage(this)">
             <option selected disabled hidden>Selecione uma Imagem</option>
             <optgroup label="Feminino">
-              <option <?= ($item->image === "cropped.jpg") ? 'selected' : '' ?> value="cropped.jpg">Cropped</option>
-              <option <?= ($item->image === "short.jpg") ? 'selected' : '' ?> value="short.jpg">Short</option>
-              <option <?= ($item->image === "vestido.jpg") ? 'selected' : '' ?> value="vestido.jpg">Vestido</option>
+              <option <?= ($item->image === "blusaF.jpg") ? 'selected' : '' ?> value="blusaF.jpg">Cropped</option>
+              <option <?= ($item->image === "calçaF.jpg") ? 'selected' : '' ?> value="calçaF.jpg">Calça</option>
+              <option <?= ($item->image === "shortF.jpg") ? 'selected' : '' ?> value="shortF.jpg">Short</option>
+              <option <?= ($item->image === "pijamaF.jpg") ? 'selected' : '' ?> value="pijamaF.jpg">Vestido</option>
             </optgroup>
             <optgroup label="Masculino">
-              <option <?= ($item->image === "blusa.jpg") ? 'selected' : '' ?> value="blusa.jpg">Blusa</option>
-              <option <?= ($item->image === "calça.jpg") ? 'selected' : '' ?> value="calça.jpg">Calça</option>
-              <option <?= ($item->image === "jaqueta.jpg") ? 'selected' : '' ?> value="jaqueta.jpg">Jaqueta</option>
+              <option <?= ($item->image === "blusaM.jpg") ? 'selected' : '' ?> value="blusaM.jpg">Blusa</option>
+              <option <?= ($item->image === "calçaM.jpg") ? 'selected' : '' ?> value="calçaM.jpg">Calça</option>
+              <option <?= ($item->image === "shortM.jpg") ? 'selected' : '' ?> value="shortM.jpg">Short</option>
+              <option <?= ($item->image === "pijamaM.jpg") ? 'selected' : '' ?> value="pijamaM.jpg">Jaqueta</option>
+
             </optgroup>
           </select>
         </div>
@@ -52,7 +55,7 @@
         </div>
 
         <div class="block">
-          <label for="price">Preço</label>
+          <label for="price">Preço (R$)</label>
           <input id="price" name="price" type="text" value="<?= $item->price ?>" placeholder="00,000,00" />
         </div>
 
@@ -60,12 +63,7 @@
 
       <footer>
 
-        <p>
-          <img src="<?= url("/theme/assets/images/icons/warning.svg") ?>" alt="Aviso importante" draggable="false" />
-          Importante!<br />
-          Preencha todos os dados.
-        </p>
-        <button type="submit">
+        <button type="submit" class="button-large">
           Salvar alterações
         </button>
 

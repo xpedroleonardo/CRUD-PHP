@@ -2,15 +2,21 @@
   <header>
     <img src="<?= url('/theme/assets/images/roupas/' . $item->image) ?>" alt="" draggable="false" />
     <div>
-      <strong><?= $item->name ?></strong>
+      <strong class="text-center"><?= $item->name ?></strong>
     </div>
   </header>
 
-  <p><?= $item->description ?></p>
+  <div>
+    <p><?= $item->description ?></p>
+  </div>
+
+  <div class="block">
+    <div id="details-card-price" class="text-center">
+      <p><strong>R$ <?= $item->price ?></strong></p>
+    </div>
+  </div>
 
   <footer>
-    <p>Preço<strong>R$ <?= $item->price ?></strong></p>
-
     <a href=" <?= $router->route("app.detail", ["id" => $item->id]); ?>">
       Ver
     </a>

@@ -1,11 +1,11 @@
-<?php $v->layout("../_theme", ["title" => "Home"]); ?>
+<?php $v->layout("../_theme"); ?>
 
 <div id="home-page">
   <div class="content">
     <div id="page-home-content">
       <div class="logo-container">
-        <img src="<?= url('/theme/assets/images/logo.svg') ?>" alt="Logo" draggable="false" />
-        <h2>Sua plataforma de estudos online.</h2>
+        <img src="<?= url('/theme/assets/images/logo.png') ?>" alt="Logo" draggable="false" />
+        <h2>Sua plataforma de compras online.</h2>
       </div>
       <div>
         <img src="<?= url('/theme/assets/images/landing.svg') ?>" alt="Plataforma de estudos" class="hero-image" draggable="false" />
@@ -24,12 +24,12 @@
       <div class="buttons-container">
         <a href="<?= $router->route("app.read") ?>" class="products">
           <img src="<?= url('/theme/assets/images/icons/list.svg') ?>" draggable="false" />
-          Produtos
+          Ver produtos
         </a>
 
         <a href="<?= $router->route("app.create") ?>" class="products">
           <img src="<?= url('/theme/assets/images/icons/plus.svg') ?>" draggable="false" />
-          Cadastar
+          Novo produto
         </a>
       </div>
     </div>

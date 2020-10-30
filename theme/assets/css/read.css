@@ -33,7 +33,7 @@
 }
 
 .card-item header{
-  padding: 3.2rem 2rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,9 +41,9 @@
 
 .card-item header img{
   width: 20rem;
-  height: 20rem;
+  /* height: 20rem; */
 
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
 
 .card-item header div {
@@ -54,14 +54,13 @@
 .card-item header div strong{
   max-width: 250px;
   overflow-wrap: break-word;
-  text-align: center;
   overflow: hidden;
   height: 30px;
   font: 700 2.4rem Archivo;
   color: var(--color-text-title);
 }
 
-.card-item > p{
+.card-item div:nth-child(2) p{
   padding: 0 5rem;
   font-size: 1.6rem;
   line-height: 2.8rem;
@@ -70,11 +69,14 @@
   height: 50px;
 }
 
+.card-item div:nth-child(3) p{
+  margin: 20px 0;
+}
+
 .card-item footer{
   padding: 3.2rem 2rem;
   background: var(--color-box-footer);
   border-top: 1px solid var(--color-line-in-white);
-  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,7 +108,6 @@
   align-items: center;
   transition: 0.2s;
   text-decoration: none;
-  margin-top: 15px;
 }
 
 .card-item footer a:hover{
@@ -131,7 +132,7 @@
 
   .card-item header,
   .card-item footer {
-      padding: 3.2rem;
+      padding: 2rem;
   }
 
   .card-item > p{

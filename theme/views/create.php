@@ -1,6 +1,6 @@
 <?php $v->layout("../_theme"); ?>
 
-<div id="page-teacher-form" class="container">
+<div id="page-form" class="container">
 
   <?php
   $v->insert("../utils/header", [
@@ -28,14 +28,16 @@
           <select name="selectImage" type="text" id="images" onchange="previewImage(this)">
             <option value="" selected disabled hidden>Selecione uma Imagem</option>
             <optgroup label="Feminino">
-              <option value="cropped.jpg">Cropped</option>
-              <option value="short.jpg">Short</option>
-              <option value="vestido.jpg">Vestido</option>
+              <option value="blusaF.jpg">Cropped</option>
+              <option value="calçaF.jpg">Calça</option>
+              <option value="shortF.jpg">Short</option>
+              <option value="pijamaF.jpg">Pijama</option>
             </optgroup>
             <optgroup label="Masculino">
-              <option value="blusa.jpg">Blusa</option>
-              <option value="calça.jpg">Calça</option>
-              <option value="jaqueta.jpg">Jaqueta</option>
+              <option value="blusaM.jpg">Camiseta</option>
+              <option value="calçaM.jpg">Calça</option>
+              <option value="shortM.jpg">Short</option>
+              <option value="pijamaM.jpg">Pijama</option>
             </optgroup>
           </select>
         </div>
@@ -51,7 +53,7 @@
         </div>
 
         <div class="block">
-          <label for="price">Preço</label>
+          <label for="price">Preço (R$)</label>
           <input id="price" name="price" type="text" placeholder="00.000,00" />
         </div>
 
@@ -59,12 +61,7 @@
 
       <footer>
 
-        <p>
-          <img src="<?= url("/theme/assets/images/icons/warning.svg") ?>" alt="Aviso importante" draggable="false" />
-          Importante!<br />
-          Preencha todos os dados.
-        </p>
-        <button type="submit">
+        <button type="submit" class="button-large">
           Salvar cadastro
         </button>
 
