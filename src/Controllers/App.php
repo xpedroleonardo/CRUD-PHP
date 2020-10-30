@@ -85,6 +85,13 @@ class App
       return;
     }
 
+    if (strlen($itemData["name"]) > 30 || strlen($itemData["description"]) > 255 || strlen($itemData["price"]) > 9) {
+      $callback["error"] = "Não altere nosso formulário";
+      $callback["type"] = "error";
+      echo json_encode($callback);
+      return;
+    }
+
     $item = new Item();
     $item->name = $itemData["name"];
     $item->description = $itemData["description"];
@@ -103,6 +110,13 @@ class App
     $itemData = filter_var_array($data, FILTER_SANITIZE_STRING);
     if (in_array("", $itemData)) {
       $callback["error"] = "Preencha todos os dados.";
+      $callback["type"] = "error";
+      echo json_encode($callback);
+      return;
+    }
+
+    if (strlen($itemData["name"]) > 30 || strlen($itemData["description"]) > 255 || strlen($itemData["price"]) > 9) {
+      $callback["error"] = "Não altere nosso formulário";
       $callback["type"] = "error";
       echo json_encode($callback);
       return;

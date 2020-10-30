@@ -41,12 +41,14 @@
       <footer>
 
         <a href=" <?= $router->route("app.edit", ["id" => $item->id]); ?>">
-          <button id=" update" type="button">
+          <button id="update" type="button">
+            <img src="<?= url('/theme/assets/images/icons/edit.svg') ?>" />
             Editar
           </button>
         </a>
 
         <button id="delete" type="submit" data-action="<?= $router->route("app.delete"); ?>" data-id="<?= $item->id; ?>">
+          <img src="<?= url('/theme/assets/images/icons/trash.svg') ?>" />
           Excluir
         </button>
 
@@ -68,9 +70,11 @@
 
       Swal.fire({
         icon: "warning",
+        // iconColor: "#fafa",
         title: "Excluir produto!",
         text: "Deseja realmente excluir o produto",
         confirmButtonText: 'Excluir',
+        cancelButtonText: 'Cancelar',
         showCancelButton: true,
         showLoaderOnConfirm: true,
         preConfirm: () => {

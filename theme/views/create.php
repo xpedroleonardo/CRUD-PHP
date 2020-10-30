@@ -25,8 +25,8 @@
 
         <div class="select-block">
           <label for="images">Imagem</label>
-          <select required name="selectImage" type="text" id="images" onchange="previewImage(this)">
-            <option selected disabled hidden>Selecione uma Imagem</option>
+          <select name="selectImage" type="text" id="images" onchange="previewImage(this)">
+            <option value="" selected disabled hidden>Selecione uma Imagem</option>
             <optgroup label="Feminino">
               <option value="cropped.jpg">Cropped</option>
               <option value="short.jpg">Short</option>
@@ -42,12 +42,12 @@
 
         <div class="block">
           <label for="name">Nome</label>
-          <input type="text" name="name" id="name" />
+          <input type="text" name="name" id="name" maxlength="30" />
         </div>
 
         <div class="textarea-block">
           <label for="bio">Descrição</label>
-          <textarea id="bio" name="description"></textarea>
+          <textarea id="bio" name="description" maxlength="255"></textarea>
         </div>
 
         <div class="block">
@@ -113,6 +113,7 @@ $v->start("js");
           })
 
         } else {
+
           Swal.fire({
             icon: callback.type,
             title: 'Sucesso',

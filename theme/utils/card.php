@@ -1,4 +1,4 @@
-<div class="teacher-item">
+<div class="card-item">
   <header>
     <img src="<?= url('/theme/assets/images/roupas/' . $item->image) ?>" alt="" draggable="false" />
     <div>

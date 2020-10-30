@@ -4,39 +4,13 @@
   height: 100vh;
 }
 
-
-#search-teachers{
-  margin-top: 3.2rem;
-}
-
-#search-teachers label{
-  color: var(--color-title-in-primary);
-}
-
-#search-teachers button{
-  width: 100%;
-  height: 5.6rem;
-  background: var(--color-secundary);
-  color: var(--color-button-text);
-  border: 0;
-  border-radius: 0.8rem;
-  cursor: pointer;
-  font: 700 1.6rem Archivo;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: background-color 0.2s;
-  margin-top: 3.2rem;
-}
-
-#search-teachers button:hover{
-  background: var(--color-secundary-dark);
+#list .page-header{
+  padding-bottom: 0px;
 }
 
 #list main{
-  margin: 3.2rem auto;
-  padding: 3.2rem 0;
+  margin: -3.2rem auto;
+  /* padding: 3.2rem 0; */
   
   width: 100%;
   max-width: 1200px;
@@ -48,7 +22,7 @@
   justify-content: space-around;
 }
 
-.teacher-item{
+.card-item{
   background: var(--color-box-base);
   border: 1px solid var(--color-line-in-white);
   border-radius: 0.8rem;
@@ -58,68 +32,67 @@
   margin-bottom: 20px;
 }
 
-.teacher-item header{
+.card-item header{
   padding: 3.2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.teacher-item header img{
+.card-item header img{
   width: 20rem;
   height: 20rem;
 
   margin-bottom: 15px;
 }
 
-/* .teacher-item header div{
-  margin-left: 2.4rem;
-} */
+.card-item header div {
+  display: flex;
+  justify-content: center;
+}
 
-.teacher-item header div strong{
+.card-item header div strong{
+  max-width: 250px;
+  overflow-wrap: break-word;
+  text-align: center;
+  overflow: hidden;
+  height: 30px;
   font: 700 2.4rem Archivo;
-  display: block;
   color: var(--color-text-title);
 }
 
-.teacher-item header div span{
-  font-size: 1.6rem;
-  display: block;
-  margin-top: 0.4rem;
-}
-
-.teacher-item > p{
+.card-item > p{
   padding: 0 5rem;
   font-size: 1.6rem;
   line-height: 2.8rem;
   overflow-wrap: break-word;
   overflow: hidden;
-  height: 60px;
+  height: 50px;
 }
 
-.teacher-item footer{
+.card-item footer{
   padding: 3.2rem 2rem;
   background: var(--color-box-footer);
   border-top: 1px solid var(--color-line-in-white);
-  margin-top: 3.2rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
 
-.teacher-item footer p {
+.card-item footer p {
   display: flex; 
 }
 
-.teacher-item footer p strong{
+.card-item footer p strong{
   color: var(--color-primary);
   font-size: 1.6rem;
   margin-left: 1.6rem;
   display: block;  
 }
 
-.teacher-item footer a{
+.card-item footer a{
   width: 20rem;
   height: 5.6rem;
   background: var(--color-secundary);
@@ -136,29 +109,14 @@
   margin-top: 15px;
 }
 
-.teacher-item footer a:hover{
+.card-item footer a:hover{
   background: var(--color-secundary-dark);
 }
 
 @media(max-width: 770px){
 
-  .teacher-item header,
-  .teacher-item footer {
-      padding: 3.2rem;
-  }
-
-  .teacher-item > p{
-      padding: 0 3.2rem;
-  }
-
-  .teacher-item footer button{
-      width: 24.5rem;
-      font-size: 1.6rem;
-      justify-content: center;
-  }
-
-  .teacher-item footer button img{
-      margin-right: 1.6rem;
+  #list .page-header{
+    padding-bottom: 50px;
   }
 
   #list main{
@@ -167,8 +125,27 @@
     justify-content: center;
   }
 
-  .teacher-item{
+  .card-item{
     margin-bottom: 20px;
+  }
+
+  .card-item header,
+  .card-item footer {
+      padding: 3.2rem;
+  }
+
+  .card-item > p{
+      padding: 0 3.2rem;
+  }
+
+  .card-item footer button{
+      width: 24.5rem;
+      font-size: 1.6rem;
+      justify-content: center;
+  }
+
+  .card-item footer button img{
+      margin-right: 1.6rem;
   }
 
 }

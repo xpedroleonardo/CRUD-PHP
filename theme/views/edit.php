@@ -43,12 +43,12 @@
 
         <div class="block">
           <label for="name">Nome</label>
-          <input type="text" name="name" id="name" value="<?= $item->name ?>" />
+          <input type="text" name="name" id="name" maxlength="30" value="<?= $item->name ?>" />
         </div>
 
         <div class="textarea-block">
           <label for="bio">Descrição</label>
-          <textarea id="bio" name="description"><?= $item->description ?></textarea>
+          <textarea id="bio" name="description" maxlength="255"><?= $item->description ?></textarea>
         </div>
 
         <div class="block">
@@ -66,7 +66,7 @@
           Preencha todos os dados.
         </p>
         <button type="submit">
-          Salvar edição
+          Salvar alterações
         </button>
 
       </footer>
