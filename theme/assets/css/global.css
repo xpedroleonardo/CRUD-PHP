@@ -87,9 +87,8 @@ textarea{
 /* Preview Imagem */
 
 .image-preview {
-  height: 40vh;
   max-height: 400px;
-  width: 100%;;
+  width: 100%;
 
   display: flex;
   align-items: center;
@@ -100,22 +99,13 @@ textarea{
 
 .image-preview img{
   max-width: 320px;
-  width: 50vw;
-  min-width: 300px;
-
-  overflow: hidden;
-  background-repeat: no-repeat;
 }
 
 @media (max-width: 770px){
 
-  #page-form .image-preview {
-    margin-top: 20px;
-    margin-bottom: 40px;
-  }
   #page-form .image-preview img {
-    max-width: 250px;
-    width: 250px;
+    width: 100%;
+    min-width: 200px;
   }
 }
 
