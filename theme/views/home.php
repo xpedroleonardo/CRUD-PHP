@@ -2,14 +2,12 @@
 
 <div id="home-page">
   <div class="content">
-    <div id="page-home-content">
-      <div class="logo-container">
-        <img src="<?= url('/theme/assets/images/logo.png') ?>" alt="Logo" draggable="false" />
-        <h2>Sua plataforma de compras online.</h2>
-      </div>
-      <div>
-        <img src="<?= url('/theme/assets/images/landing.svg') ?>" alt="Plataforma de estudos" class="hero-image" draggable="false" />
-      </div>
+    <div class="logo-container">
+      <img src="<?= url('/theme/assets/images/logo.png') ?>" alt="Logo" draggable="false" />
+      <h2>Sua plataforma de compras online.</h2>
+    </div>
+    <div>
+      <img src="<?= url('/theme/assets/images/landing.svg') ?>" alt="Plataforma de estudos" class="hero-image" draggable="false" />
     </div>
   </div>
 
