@@ -105,10 +105,10 @@
 }
 .products:nth-child(2) {
   transition: 0.2s;
-  background-color: var(--color-secundary);
+  background-color: var(--color-primary);
 }
 .products:nth-child(2):hover {
-  background-color: var(--color-secundary-dark);
+  background-color: var(--color-primary-dark);
 }
 
 .total-products {
@@ -134,21 +134,25 @@
   }
 
   .content .logo-container h2 {
-    font-size: 4.5vw;
-    width: 60.6vw;
+    font-size: 5.5vw;
+    width: 67vw;
   }
 
   .content .logo-container img {
-    width: 85vw;
+    width: 67vw;
   }
 
   .content div:nth-child(2) img {
-    margin-top: 4vh;
+    margin-top: 5vh;
     width: 70vw;
   }
 
   .footer .footer-container{
     flex-direction: column;
+  }
+
+  .text-container{
+    text-align: center;
   }
 
   .footer .footer-container .buttons-container{

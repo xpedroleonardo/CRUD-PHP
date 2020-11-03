@@ -2,15 +2,12 @@
   font-size: 60%;
 
   --color-background: #F0F0F7;
-  --color-primary-lighter: #9871F5;
   --color-primary-light: #916BEA;
+
   --color-primary: #8257E5;
   --color-primary-dark: #774DD6;
-  --color-primary-darker: #6842C2;
-  --color-secundary: #04D361;
-  /* --color-secundary: #3085d6; */
-  --color-secundary-dark: #04BF58;
-  --color-title-in-primary: #FFFFFF;
+  
+  --color-title: #FFFFFF;
   --color-text-in-primary: #D4C2FF;
   --color-text-title: #32264D;
   --color-text-complement: #9C98A6;
@@ -75,6 +72,14 @@ textarea{
 
 .swal2-styled {
   width: 15em !important;
+}
+
+.swal2-styled.swal2-confirm {
+  background-color: var(--color-primary) !important;
+}
+
+.swal2-styled.swal2-cancel{
+  background-color: #E33D3D !important;
 }
 
 .icons-actions {
@@ -153,7 +158,7 @@ textarea{
 .page-header .header-content strong{
   font: 700 3.6rem Archivo;
   line-height: 4.2rem;
-  color: var(--color-title-in-primary);
+  color: var(--color-title);
 }
 
 .page-header .header-content p{

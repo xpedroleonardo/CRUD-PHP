@@ -7,7 +7,7 @@
       <h2>Sua plataforma de compras online.</h2>
     </div>
     <div>
-      <img src="<?= url('/theme/assets/images/landing.svg') ?>" alt="Plataforma de estudos" class="hero-image" draggable="false" />
+      <img src="<?= url('/theme/assets/images/landing.svg') ?>" alt="Landing image" draggable="false" />
     </div>
   </div>
 
@@ -40,7 +40,7 @@
         } else {
           echo "Total de " . $items . " produtos cadastrados";
         }
-        echo "<img src=" . url('/theme/assets/images/icons/purple-heart.svg') . " draggable='false' />";
+        echo "<img src=" . url('/theme/assets/images/icons/heart.svg') . " draggable='false' />";
       } else {
         echo "Ainda não temos produtos cadastrados";
       }
