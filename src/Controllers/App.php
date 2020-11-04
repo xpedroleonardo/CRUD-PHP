@@ -7,8 +7,8 @@ use Src\Models\Item;
 
 class App
 {
-  // /** @var Engine */
-  // private $view;
+  /** @var Engine */
+  private $view;
 
   public function __construct($router)
   {
@@ -32,8 +32,8 @@ class App
   {
     echo $this->view->render("create", [
       "title" => "Novo",
-      "headerTitle" => "Que incrível que você quer dar aula",
-      "headerDesc" => "O primeiro passo é preencher esse formulário de inscrição"
+      "headerTitle" => "Você quer cadastrar um produto ?",
+      "headerDesc" => "O primeiro passo é preencher esse formulário"
     ]);
   }
 
@@ -41,8 +41,9 @@ class App
   {
     echo $this->view->render("read", [
       "items" => (new Item())->find()->fetch(true),
-      "title" => "Itens",
-      "headerTitle" => "Estes são os proffys disponíveis."
+      "title" => "Produtos",
+      "headerTitle" => "Estes são os produtos disponíveis",
+      "headerDesc" => "Explore e encontre o melhor para você se vestir"
     ]);
   }
 
@@ -54,7 +55,8 @@ class App
       echo $this->view->render("detail", [
         "item" => $item,
         "title" => "Detalhes",
-        "headerTitle" => "Detalhes do Item"
+        "headerTitle" => "Detalhes do produto",
+        "headerDesc" => "Esses são os dados do produto cadastrado"
       ]);
     } else {
       echo $this->view->render("home");
@@ -69,7 +71,8 @@ class App
       echo $this->view->render("edit", [
         "item" => $item,
         "title" => "Editar",
-        "headerTitle" => "Editar Item"
+        "headerTitle" => "Editar produto",
+        "headerDesc" => "Altere os dados do produto cadastrado"
       ]);
     } else {
       echo $this->view->render("home");
@@ -100,7 +103,7 @@ class App
     $item->price = $itemData["price"];
     $item->save();
 
-    $callback["message"] = "Usuário cadastrado com sucesso";
+    $callback["message"] = "Produto cadastrado com sucesso";
     $callback["type"] = "success";
     echo json_encode($callback);
   }
@@ -130,7 +133,7 @@ class App
     $item->price = $itemData["price"];
     $item->save();
 
-    $callback["message"] = "Usuário Editado com sucesso";
+    $callback["message"] = "Produto Editado com sucesso";
     $callback["type"] = "success";
     echo json_encode($callback);
   }
@@ -149,7 +152,7 @@ class App
     }
 
     $callback["type"] = "success";
-    $callback["message"] = "Item excluído com sucesso";
+    $callback["message"] = "Produto excluído com sucesso";
     echo json_encode($callback);
   }
 }

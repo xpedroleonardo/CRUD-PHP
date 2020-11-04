@@ -16,9 +16,6 @@
 
       <fieldset>
 
-        <legend>Dados</legend>
-
-
         <div class="image-preview">
           <img src="<?= url("/theme/assets/images/roupas/default.jpg") ?>" title="Preview da Imagem" id="imagePreview" draggable="false" />
         </div>
@@ -62,7 +59,7 @@
       <footer>
 
         <button type="submit" class="button-large">
-          Salvar cadastro
+          Salvar
         </button>
 
       </footer>
