@@ -32,7 +32,7 @@
 }
 
 .content div:nth-child(2) img {
-  width: 50vw;
+  width: 40vw;
 }
 
 .footer {
@@ -140,11 +140,13 @@
 
   .content .logo-container img {
     width: 67vw;
+    max-width: 300px;
   }
 
   .content div:nth-child(2) img {
     margin-top: 5vh;
-    width: 70vw;
+    width: 47vw;
+    min-width: 230px;
   }
 
   .footer .footer-container{
