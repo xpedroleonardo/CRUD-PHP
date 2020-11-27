@@ -1,14 +1,14 @@
 <?php
 
 /** BASE URL */
-define("ROOT", "http://localhost/houpa");
+define("ROOT", "http://localhost/CRUD-PHP");
 
 /** DATABASE CONNECT */
 define("DATA_LAYER_CONFIG", [
   "driver" => "mysql",
   "host" => "localhost",
   "port" => "3306",
-  "dbname" => "houpa",
+  "dbname" => "CRUD",
   "username" => "root",
   "passwd" => "",
   "options" => [

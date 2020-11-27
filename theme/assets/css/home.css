@@ -12,20 +12,15 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-
-  /* background-image: url(../images/05.jpg);
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 
 .content .logo-container img {
-  width: 28.31vw;
+  width: 20vw;
 }
 
 .content .logo-container h2 {
-  font-weight: 300;
-  font-size: 2.5vw;   
+  font-weight: 500;
+  font-size: 2vw;   
   width: 23.6vw; 
 
   color: var(--text);
@@ -139,8 +134,8 @@
   }
 
   .content .logo-container img {
-    width: 67vw;
-    max-width: 300px;
+    width: 50vw;
+    max-width: 100px;
   }
 
   .content div:nth-child(2) img {
