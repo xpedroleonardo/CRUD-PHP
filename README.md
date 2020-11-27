@@ -1,4 +1,4 @@
-## 💻️ houpa
+## 💻️ CRUD-PHP
 
 <div align="center">
     <img style="width: 85%;" src="./theme/assets/images/README.gif">
@@ -7,7 +7,7 @@
 
 ## 📑 Sobre
 
-Aplicação web desenvolvido para o teste de admissão no houpa, para a vaga de programador fullstack php.
+Aplicação web desenvolvido com a finalidade de construir um CRUD em PHP
 
 - Layout Responsivo
 
@@ -26,7 +26,7 @@ O projeto foi desenvolvido utilizando:
 ```bash
 
     #Clonar o Repositório (Via Terminal)
-    $ git clone https://github.com/xpedroleonardo/houpa.git
+    $ git clone https://github.com/xpedroleonardo/CRUD-PHP.git
 
     #Ou
 
@@ -43,7 +43,7 @@ O projeto foi desenvolvido utilizando:
 ```bash
 
     #Entrar na pasta do projeto
-    $ cd houpa/
+    $ cd CRUD-PHP/
 
     #Instalar as depedências 
     $ php composer.phar install
@@ -63,7 +63,7 @@ Acesse o arquivo <strong>src/Config.php</strong>, e altere a constante de conex�
 
 ### Constante Raiz (BASE URL)
 Também no arquivo <strong>src/Config.php</strong>, e altere a constante <strong>ROOT</strong>, conforme está no seu localhost, de forma que não tenha uma <strong>/</strong> no final.<br/>
-Exemplo: http://localhost/houpa
+Exemplo: http://localhost/CRUD-PHP
 
 
 ## ⚠ Atenção !!!
